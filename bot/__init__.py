@@ -437,6 +437,11 @@ try:
 except:
     CRYPT = None
 try:
+    SOURCE_LINK = getConfig('SOURCE_LINK')
+    SOURCE_LINK = SOURCE_LINK.lower() == 'true'
+except KeyError:
+    SOURCE_LINK = False
+try:
     TOKEN_PICKLE_URL = getConfig('TOKEN_PICKLE_URL')
     if len(TOKEN_PICKLE_URL) == 0:
         raise KeyError
