@@ -200,7 +200,7 @@ class MirrorListener:
             msg += f'\n<b>Total Files: </b>{folders}'
             if typ != 0:
                 msg += f'\n<b>Corrupted Files: </b>{typ}'
-            msg += f'\n<b>👽 Request By </b>{self.tag} /
+            msg += f'\n<b> cc: </b>{self.tag}\n\n' /
             msg += f'\n<b> Elapsed Time:</b> {get_readable_time(time() - self.message.date.timestamp())}'
             if not files:
                 sendMessage(msg, self.bot, self.message)
@@ -219,7 +219,7 @@ class MirrorListener:
             if ospath.isdir(f'{DOWNLOAD_DIR}{self.uid}/{name}'):
                 msg += f'\n<b>SubFolders: </b>{folders}'
                 msg += f'\n<b>Files: </b>{files}'
-            msg += f'\n\n<b>👽 Request By </b>{self.tag} /
+            msg += f'\n\n<b> cc: </b>{self.tag}' /
             msg += f'\n<b> Elapsed Time:</b> {get_readable_time(time() - self.message.date.timestamp())}'
             buttons = ButtonMaker()
             link = short_url(link)
